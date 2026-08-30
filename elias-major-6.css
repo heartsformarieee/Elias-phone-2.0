@@ -1,0 +1,21 @@
+/* ELIAS OS 6 — FULL BACKGROUND + PRESENCE */
+html,body{min-height:100%;background:#050507;overscroll-behavior-y:none}
+body{min-height:100dvh}
+.phone{min-height:100dvh;background:transparent!important;overflow-x:hidden}
+.wallpaper{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:100dvh!important;overflow:hidden!important;z-index:0!important;background:#050507 url('couple.PNG') center center/cover no-repeat!important;pointer-events:none}
+.wallpaper img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-width:100%!important;min-height:100%!important;object-fit:cover!important;object-position:center center!important;display:block!important}
+.wallpaper-dark{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+.home-screen{min-height:100dvh!important;background:transparent!important;isolation:isolate}
+.app-window{height:100dvh!important;min-height:100dvh!important;max-height:100dvh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-y:contain!important;touch-action:pan-y!important}
+.app-content{min-height:calc(100dvh - 64px);overflow:visible!important;touch-action:pan-y!important}
+.ecom-page,.eos-page{min-height:calc(100dvh - 64px)!important}
+.ecom-history{max-height:none!important;min-height:0!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;touch-action:pan-y!important}
+
+.eos6-presence{position:fixed;left:14px;right:14px;top:max(56px,calc(env(safe-area-inset-top) + 48px));z-index:850;display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(13,10,14,.88);box-shadow:0 14px 45px rgba(0,0,0,.32);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);transform:translateY(-18px);opacity:0;pointer-events:none;transition:.28s ease}
+.eos6-presence.show{transform:translateY(0);opacity:1;pointer-events:auto}
+.eos6-presence img{width:38px;height:38px;border-radius:12px;object-fit:cover;object-position:center top;background:#111}
+.eos6-presence div{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}.eos6-presence strong{font-size:12px}.eos6-presence span{font-size:10px;color:rgba(255,255,255,.58);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.eos6-presence button{border:0;background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:7px 10px;font-size:10px}
+
+.ecom-voice-note{margin-top:7px;display:flex;align-items:center;gap:8px;min-width:180px}.ecom-voice-play{width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:14px}.ecom-voice-line{flex:1;height:3px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.18));position:relative;overflow:hidden}.ecom-voice-line:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-100%);animation:eos6Wave 1.8s infinite}.ecom-voice-time{font-size:9px!important;color:rgba(255,255,255,.5)!important}@keyframes eos6Wave{to{transform:translateX(100%)}}
+
+@media(max-width:430px){.wallpaper{background-position:center center!important}.home-screen{padding-bottom:calc(118px + env(safe-area-inset-bottom))!important}.apps-grid{padding-bottom:8px}.eos6-presence{left:10px;right:10px}}
