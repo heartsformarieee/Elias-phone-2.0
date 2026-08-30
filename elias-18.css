@@ -1,0 +1,113 @@
+/* ========================================
+   ELIAS OS 1.8 — CROSS-SYSTEM PRESENCE
+   ======================================== */
+
+.elias-presence-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin: 10px 0 15px;
+  padding: 10px 13px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  background: rgba(10,10,14,.30);
+  color: rgba(255,255,255,.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.elias-presence-strip .presence-left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 7px;
+  font-weight: 750;
+  letter-spacing: .04em;
+}
+
+.elias-presence-strip .presence-mood {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.elias-presence-strip .presence-since {
+  flex: 0 0 auto;
+  opacity: .58;
+  font-weight: 650;
+}
+
+.elias-widget.presence-warm {
+  box-shadow: 0 18px 44px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.11);
+}
+
+.elias-widget.presence-needy .widget-heart {
+  animation: eliasHeartBeat 1.65s ease-in-out infinite;
+}
+
+.elias-widget.presence-smug .widget-heart {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+@keyframes eliasHeartBeat {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.15); }
+  24% { transform: scale(1); }
+  36% { transform: scale(1.10); }
+  48% { transform: scale(1); }
+}
+
+.notification-card.elias-reactive-notification {
+  position: relative;
+  overflow: hidden;
+}
+
+.notification-card.elias-reactive-notification::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,.42);
+}
+
+.badge.presence-badge-pulse {
+  animation: badgeSoftPulse 2.1s ease-in-out infinite;
+}
+
+@keyframes badgeSoftPulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.09); }
+}
+
+.elias-system-whisper {
+  position: fixed;
+  z-index: 10000;
+  left: 50%;
+  bottom: calc(25px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 12px);
+  max-width: calc(100vw - 40px);
+  padding: 11px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(18,18,22,.92);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.elias-system-whisper.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
