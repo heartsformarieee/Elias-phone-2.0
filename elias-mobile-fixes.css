@@ -1,0 +1,21 @@
+/* ELIAS OS 5.3 — MOBILE LAYOUT + SCROLL REPAIR */
+html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none}
+body{-webkit-overflow-scrolling:touch}
+.phone{width:100%;max-width:100vw;min-height:100dvh;overflow-x:hidden;overflow-y:visible}
+.home-screen{width:100%;max-width:100vw;min-height:100dvh;padding-bottom:calc(118px + env(safe-area-inset-bottom));overflow-x:hidden}
+.home-screen .apps-grid{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:8px;row-gap:17px;margin-top:20px;padding-bottom:4px}
+.home-screen .app-icon-button{min-width:0;width:100%;font-size:10px;line-height:1.15}
+.home-screen .app-icon{width:56px;height:56px;max-width:100%;margin-inline:auto}
+.eos-phone-icon{background:linear-gradient(145deg,#2fba68,#087538);color:#fff;font-size:24px}
+.eos-store-icon{background:linear-gradient(145deg,#4fa6ff,#176dd8);color:#fff;font:700 24px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif}
+.dock{left:14px;right:14px;bottom:max(10px,env(safe-area-inset-bottom));height:72px;padding:8px 10px;border-radius:24px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.dock-app{min-width:0}
+.app-window{height:100dvh;min-height:100dvh;max-height:100dvh;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;touch-action:pan-y;background:linear-gradient(180deg,#141016,#08070a)}
+.app-header{position:sticky;top:0;z-index:50}
+.app-content{min-height:calc(100dvh - 58px - env(safe-area-inset-top));overflow:visible!important;touch-action:pan-y;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+.ecom-page,.eos-page{min-height:auto!important;overflow:visible!important;touch-action:pan-y}
+.ecom-history{max-height:none!important;overflow:visible!important;-webkit-overflow-scrolling:touch}
+.eos-list,.eos-store-list{overflow:visible}
+.eos-sheet{touch-action:pan-y;-webkit-overflow-scrolling:touch}
+@media(max-width:390px){.home-screen{padding-left:14px;padding-right:14px}.home-heading h1{font-size:27px}.elias-mood-pill{top:76px;right:14px}.home-screen .apps-grid{column-gap:5px}.home-screen .app-icon{width:54px;height:54px}.dock{left:10px;right:10px}}
+@media(max-height:760px){.home-screen{padding-top:calc(56px + env(safe-area-inset-top))}.home-screen .apps-grid{row-gap:14px}.small-widget{min-height:84px}.elias-widget{min-height:132px}}
