@@ -36,6 +36,7 @@ function renderMessages(){
     <small class="ecom-hint">${SpeechRecognition?'Tap the mic and speak to send a voice message.':'Typing works now; voice input needs browser speech recognition support.'}</small>
   </div>`;
   bind();scrollBottom();
+  if(pending)setBusy(true,'typing…');
 }
 
 function scrollBottom(){const h=$('#ecomHistory');if(h)requestAnimationFrame(()=>{h.scrollTop=h.scrollHeight});}
@@ -46,17 +47,20 @@ async function send(text,mode='text'){
   if(pending||!text.trim()||!window.EliasAI)return;
   error('');
   const input=$('#ecomInput');if(input)input.value='';
-  // Show the outgoing message immediately; EliasAI persists it.
   setBusy(true,mode==='voice-message'?'listening to your voice…':'typing…');
   try{
     const promise=window.EliasAI.ask(text.trim(),mode);
     renderConversationPreview(text,mode);
     const data=await promise;
+    pending=false;
     renderMessages();
     const widget=$('#eliasWidgetText');if(widget&&data.reaction)widget.textContent=data.reaction;
     const badge=$('#messageBadge');if(badge)badge.textContent='';
   }catch(err){
-    console.error(err);setBusy(false);error(err.message||'Elias could not answer.');
+    console.error(err);
+    pending=false;
+    setBusy(false);
+    error(err.message||'Elias could not answer.');
   }
 }
 
