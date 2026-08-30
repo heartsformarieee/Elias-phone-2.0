@@ -1,0 +1,27 @@
+/* ========================================
+   ELIAS OS 2.0 — LIVING SYSTEM
+   ======================================== */
+
+#eliasPresenceStrip{cursor:pointer;transition:transform .18s ease,background .18s ease}
+#eliasPresenceStrip:active{transform:scale(.985)}
+#eliasPresenceStrip.mori-hijack{box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 0 28px rgba(255,255,255,.04)}
+
+.elias-now-sheet{position:fixed;z-index:10020;inset:0;background:rgba(0,0,0,.46);display:flex;align-items:flex-end;justify-content:center;padding:16px 16px calc(16px + env(safe-area-inset-bottom));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .22s ease}
+.elias-now-sheet.show{opacity:1;pointer-events:auto}
+.elias-now-card{width:min(100%,520px);border-radius:30px;padding:20px;background:rgba(18,17,21,.96);border:1px solid rgba(255,255,255,.12);box-shadow:0 22px 70px rgba(0,0,0,.45);transform:translateY(24px);transition:transform .22s ease;color:#fff}
+.elias-now-sheet.show .elias-now-card{transform:translateY(0)}
+.elias-now-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.elias-now-kicker{font-size:10px;letter-spacing:.16em;font-weight:800;opacity:.55}.elias-now-close{appearance:none;border:0;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);color:white;font-size:20px}
+.elias-now-title{margin:12px 0 4px;font-size:27px;line-height:1.08}.elias-now-sub{margin:0;opacity:.7;font-size:14px;line-height:1.4}
+.elias-now-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.elias-now-box{padding:14px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}.elias-now-box small{display:block;font-size:9px;letter-spacing:.12em;opacity:.5;margin-bottom:6px}.elias-now-box strong{font-size:14px;line-height:1.3}
+.elias-daily-thought{margin-top:12px;padding:15px 16px;border-radius:21px;background:linear-gradient(135deg,rgba(117,53,89,.22),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.08)}.elias-daily-thought small{display:block;font-size:9px;letter-spacing:.13em;opacity:.5;margin-bottom:6px}.elias-daily-thought p{margin:0;font-size:14px;line-height:1.42}
+.elias-now-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.elias-now-action{appearance:none;border:0;border-radius:19px;min-height:58px;padding:8px;background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:11px;font-weight:700}.elias-now-action b{display:block;font-size:18px;margin-bottom:4px;font-weight:500}.elias-now-action:active{transform:scale(.96)}
+
+.elias-ambient-bubble{position:fixed;z-index:10010;left:18px;right:18px;bottom:calc(24px + env(safe-area-inset-bottom));margin:auto;max-width:460px;padding:13px 15px;border-radius:22px;background:rgba(20,19,23,.94);border:1px solid rgba(255,255,255,.11);color:white;box-shadow:0 18px 50px rgba(0,0,0,.35);font-size:13px;line-height:1.35;opacity:0;transform:translateY(15px) scale(.98);pointer-events:none;transition:opacity .22s ease,transform .22s ease;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.elias-ambient-bubble.show{opacity:1;transform:translateY(0) scale(1)}
+
+body.elias-night-mode .wallpaper-dark{background:rgba(0,0,0,.33)!important}
+body.elias-late-mode .home-screen{filter:saturate(.9)}
+
+.elias-widget.secret-pop{animation:secretPop .45s ease}@keyframes secretPop{0%{transform:scale(1)}45%{transform:scale(.985)}72%{transform:scale(1.012)}100%{transform:scale(1)}}
+
+.mori-status-paw{display:inline-block;margin-right:5px;animation:moriPaw 1.3s ease-in-out infinite}@keyframes moriPaw{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
